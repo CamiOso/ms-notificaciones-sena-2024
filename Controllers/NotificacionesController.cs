@@ -105,12 +105,12 @@ public class NotificacionesController : ControllerBase
 
     // Envío de SMS
 
-    [Route("enviar-sms")]
+    [Route("enviar-sms-nueva-clave")]
     [HttpPost]
     public async Task<ActionResult> EnviarSMSNuevaClave(ModeloSms datos)
     {
         var accessKey = Environment.GetEnvironmentVariable("ACCESS_KEY_AWS");
-        var secretKey = Environment.GetEnvironmentVariable("SECRET_KEY_AWS");
+        var secretKey = Environment.GetEnvironmentVariable("SECRET_KEY_AWS");//USEast1
         var client = new AmazonSimpleNotificationServiceClient(accessKey, secretKey, RegionEndpoint.USEast1);
         var messageAttributes = new Dictionary<string, MessageAttributeValue>();
         var smsType = new MessageAttributeValue
