@@ -25,7 +25,7 @@ public class NotificacionesController : ControllerBase
         msg.SetTemplateData(new
         {
             name = datos.nombreDestino,
-            message = "Bienvenido a ArisMinig."
+            message = "Bienvenido a Spa Bellisima de Marysol Orjuela."
         });
         var response = await client.SendEmailAsync(msg);
         if (response.StatusCode == System.Net.HttpStatusCode.Accepted)
